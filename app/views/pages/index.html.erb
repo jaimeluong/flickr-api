@@ -1,0 +1,9 @@
+<%= form_with url: "/", method: :get do |form| %>
+  <%= form.label :username, "Flickr username: " %>
+  <%= form.text_field :username %>
+  <%= form.submit "Get photos" %>
+<% end %>
+
+<br>
+
+<%= @nsid %>
