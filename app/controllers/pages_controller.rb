@@ -5,9 +5,8 @@ class PagesController < ApplicationController
         @flickr = Flickr.new
 
         if params[:username]
-            @nsid = @flickr.people.findByUsername(username: params[:username])['nsid']
-        else
-            @nsid = ""
+            @id = @flickr.people.findByUsername(username: params[:username])['nsid']
+            @photos = @flickr.people.getPublicPhotos(user_id: @id, per_page: 5)
         end
     end
 end

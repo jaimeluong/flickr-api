@@ -6,4 +6,9 @@
 
 <br>
 
-<%= @nsid %>
+<% if @photos %>
+    <% @photos.each do |photo| %>
+        <%= photo.id %>
+        <br>
+    <% end %>
+<% end %>
