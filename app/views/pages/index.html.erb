@@ -1,14 +1,17 @@
+<div style="display: flex; justify-content: center">
 <%= form_with url: "/", method: :get do |form| %>
   <%= form.label :username, "Flickr username: " %>
   <%= form.text_field :username %>
   <%= form.submit "Get photos" %>
 <% end %>
+</div>
 
 <br>
 
+<div style="display: flex; justify-content: center">
 <% if @photos %>
     <% @photos.each do |photo| %>
-        <%= photo.id %>
-        <br>
+        <img src=<%= photo.url_s %> alt="<%= photo.title %>" style="margin-right: 20px;">
     <% end %>
 <% end %>
+</div>
