@@ -1,9 +1,10 @@
-<div style="display: flex; justify-content: center">
+<div style="display: flex; justify-content: center; gap: 20px">
 <%= form_with url: "/", method: :get do |form| %>
   <%= form.label :username, "Flickr username: " %>
   <%= form.text_field :username %>
   <%= form.submit "Get photos" %>
 <% end %>
+<%= @error if @error %>
 </div>
 
 <br>
